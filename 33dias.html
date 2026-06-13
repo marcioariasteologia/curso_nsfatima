@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Os 33 Dias de Preparação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0d1a2d;
+    --navy-deep: #0a1422;
+    --navy-soft: #142239;
+    --cream: #f4ecd8;
+    --cream-soft: #e8dfc9;
+    --gold: #c9a24b;
+    --gold-bright: #e6c068;
+    --gold-soft: #a8893d;
+    --gold-faint: rgba(201, 162, 75, 0.4);
+    --gold-glow: rgba(230, 192, 104, 0.25);
+    --display: 'Cinzel', Georgia, serif;
+    --body: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior: smooth;}
+  body{
+    background: var(--navy-deep);
+    color: var(--cream);
+    font-family: var(--body);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Vinheta dourada radial no fundo geral */
+  body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top, rgba(201, 162, 75, 0.05) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(201, 162, 75, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  main{
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 8vmin 5vmin 6vmin;
+  }
+
+  /* ===== CABEÇALHO ===== */
+  .cabecalho{
+    text-align: center;
+    margin-bottom: 7rem;
+  }
+
+  .ornamento-superior{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+  }
+  .ornamento-superior .linha{
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .ornamento-superior .miolo{
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 0.5em;
+  }
+
+  .cabecalho-eyebrow{
+    font-family: var(--display);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.5em;
+    font-size: clamp(0.85rem, 1.3vw, 1.05rem);
+    font-weight: 500;
+    margin-bottom: 1.8rem;
+  }
+  .cabecalho-titulo{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.15;
+    color: var(--cream);
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+  }
+  .cabecalho-titulo .destaque{
+    display: block;
+    color: var(--gold-bright);
+    font-style: italic;
+    font-family: var(--body);
+    font-weight: 500;
+    font-size: 0.55em;
+    letter-spacing: 0.08em;
+    margin-top: 0.7em;
+  }
+  .cabecalho-subtitulo{
+    font-family: var(--body);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    line-height: 1.55;
+    color: var(--cream-soft);
+    max-width: 56ch;
+    margin: 0 auto;
+  }
+
+  .voltar-curso{
+    display: inline-block;
+    margin-top: 2.5rem;
+    font-family: var(--display);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.3rem;
+    transition: all 0.3s ease;
+  }
+  .voltar-curso:hover{
+    color: var(--gold-bright);
+    border-bottom-color: var(--gold-bright);
+  }
+
+  /* ===== BLOCO DE FASE ===== */
+  .fase{
+    margin-bottom: 7rem;
+  }
+  .fase:last-child{ margin-bottom: 0; }
+
+  .fase-cabecalho{
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--gold-faint);
+  }
+  .fase-numero{
+    display: inline-block;
+    font-family: var(--display);
+    color: var(--gold);
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding: 0.4em 1.4em;
+    border: 1px solid var(--gold-faint);
+    border-radius: 2em;
+  }
+  .fase-titulo{
+    font-family: var(--display);
+    color: var(--cream);
+    font-size: clamp(1.8rem, 3.4vw, 2.8rem);
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+  .fase-subtitulo{
+    font-family: var(--body);
+    font-style: italic;
+    color: var(--gold);
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+    letter-spacing: 0.02em;
+  }
+
+  /* ===== GRADE DE DIAS ===== */
+  .grade-dias{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3.5rem 2.5rem;
+    justify-items: center;
+  }
+
+  /* ===== MEDALHÃO DO DIA ===== */
+  .dia-medalhao{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--cream);
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    width: 100%;
+    max-width: 240px;
+  }
+
+  .dia-circulo{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, var(--navy-soft) 0%, var(--navy) 60%, var(--navy-deep) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--gold);
+    box-shadow:
+      inset 0 0 0 1px rgba(201, 162, 75, 0.2),
+      inset 0 0 22px rgba(201, 162, 75, 0.08),
+      0 6px 22px rgba(10, 20, 34, 0.5),
+      0 0 0 0 rgba(230, 192, 104, 0);
+    transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  .dia-circulo::before{
+    content: "";
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 1px solid rgba(201, 162, 75, 0.35);
+    pointer-events: none;
+    transition: border-color 0.4s ease;
+  }
+  .dia-circulo::after{
+    content: "✦";
+    position: absolute;
+    top: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--gold);
+    font-size: 0.6rem;
+    line-height: 1;
+    text-shadow: 0 0 4px var(--gold-glow);
+  }
+
+  .dia-rotulo{
+    font-family: var(--display);
+    color: var(--gold-soft);
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+  }
+  .dia-numero-romano{
+    font-family: var(--display);
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    text-shadow: 0 0 12px rgba(201, 162, 75, 0.3);
+    transition: color 0.4s ease;
+  }
+
+  .dia-info{
+    margin-top: 1.2rem;
+    text-align: center;
+    width: 100%;
+  }
+  .dia-numero-global{
+    font-family: var(--display);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    opacity: 0.85;
+  }
+  .dia-titulo{
+    font-family: var(--body);
+    font-style: italic;
+    color: var(--cream);
+    font-size: 1.02rem;
+    line-height: 1.3;
+    margin-bottom: 0.3rem;
+    transition: color 0.4s ease;
+  }
+  .dia-tema{
+    font-family: var(--body);
+    color: var(--gold-soft);
+    font-size: 0.8rem;
+    line-height: 1.4;
+    opacity: 0.85;
+  }
+
+  /* HOVER */
+  .dia-medalhao:hover{ transform: translateY(-6px); }
+  .dia-medalhao:hover .dia-circulo{
+    border-color: var(--gold-bright);
+    box-shadow:
+      inset 0 0 0 1px rgba(230, 192, 104, 0.35),
+      inset 0 0 30px rgba(201, 162, 75, 0.15),
+      0 12px 30px rgba(10, 20, 34, 0.65),
+      0 0 25px var(--gold-glow);
+  }
+  .dia-medalhao:hover .dia-circulo::before{ border-color: rgba(230, 192, 104, 0.55); }
+  .dia-medalhao:hover .dia-numero-romano{ color: var(--gold-bright); }
+  .dia-medalhao:hover .dia-titulo{ color: var(--gold-bright); }
+
+  /* ===== RODAPÉ ===== */
+  .rodape{
+    margin-top: 8rem;
+    padding-top: 4rem;
+    text-align: center;
+    border-top: 1px solid var(--gold-faint);
+  }
+  .rodape-vinheta{
+    color: var(--gold-faint);
+    letter-spacing: 0.5em;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  .rodape-jaculatoria{
+    font-family: var(--body);
+    font-style: italic;
+    color: var(--gold);
+    font-size: clamp(1.15rem, 1.9vw, 1.5rem);
+    line-height: 1.5;
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+  .rodape-jaculatoria strong{
+    color: var(--gold-bright);
+    font-family: var(--display);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .rodape-creditos{
+    margin-top: 2.5rem;
+    font-family: var(--display);
+    color: var(--gold-soft);
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    opacity: 0.55;
+  }
+
+  /* ===== RESPONSIVO ===== */
+  @media (max-width: 1024px){
+    .grade-dias{
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 1.5rem;
+    }
+  }
+  @media (max-width: 768px){
+    main{ padding: 6vmin 4vmin 4vmin; }
+    .grade-dias{
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 1.5rem;
+    }
+    .fase{ margin-bottom: 5rem; }
+    .cabecalho{ margin-bottom: 4rem; }
+    .dia-circulo{ width: 110px; height: 110px; }
+    .dia-numero-romano{ font-size: 1.7rem; }
+  }
+  @media (max-width: 480px){
+    .grade-dias{
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1rem;
+    }
+    .dia-circulo{ width: 100px; height: 100px; }
+    .dia-numero-romano{ font-size: 1.5rem; }
+    .dia-titulo{ font-size: 0.92rem; }
+    .dia-tema{ font-size: 0.72rem; }
+  }
+</style>
+</head>
+<body>
+
+  <main>
+
+    <header class="cabecalho">
+
+      <div class="ornamento-superior">
+        <div class="linha"></div>
+        <span class="miolo">✦</span>
+        <div class="linha"></div>
+      </div>
+
+      <div class="cabecalho-eyebrow">A Jornada da Consagração</div>
+
+      <h1 class="cabecalho-titulo">
+        Os 33 Dias<br>de Preparação
+        <span class="destaque">Doze preliminares e três semanas de retiro interior</span>
+      </h1>
+
+      <p class="cabecalho-subtitulo">
+        A preparação que São Luís Maria de Montfort propõe a quem deseja consagrar-se a Jesus Cristo pelas mãos de Maria. Um dia de cada vez, uma graça de cada vez.
+      </p>
+
+      <a href="index.html" class="voltar-curso">← voltar ao curso</a>
+
+    </header>
+
+
+      <section class="fase">
+        <div class="fase-cabecalho">
+          <div class="fase-numero">Fase I</div>
+          <h2 class="fase-titulo">Doze Dias Preliminares</h2>
+          <p class="fase-subtitulo">Desapego do espírito do mundo</p>
+        </div>
+        <div class="grade-dias">
+          <a href="dia1.html" class="dia-medalhao" aria-label="Dia 1. A Soberba da Vida">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">I</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 1 de 33</div>
+              <div class="dia-titulo">A Soberba da Vida</div>
+              <div class="dia-tema">O orgulho que não deixa</div>
+            </div>
+          </a>
+          <a href="dia2.html" class="dia-medalhao" aria-label="Dia 2. A Glória dos Homens">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">II</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 2 de 33</div>
+              <div class="dia-titulo">A Glória dos Homens</div>
+              <div class="dia-tema">A vaidade</div>
+            </div>
+          </a>
+          <a href="dia3.html" class="dia-medalhao" aria-label="Dia 3. A Maldade dos Olhos">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">III</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 3 de 33</div>
+              <div class="dia-titulo">A Maldade dos Olhos</div>
+              <div class="dia-tema">A inveja</div>
+            </div>
+          </a>
+          <a href="dia4.html" class="dia-medalhao" aria-label="Dia 4. A Dureza do Coração">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">IV</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 4 de 33</div>
+              <div class="dia-titulo">A Dureza do Coração</div>
+              <div class="dia-tema">A falta de perdão</div>
+            </div>
+          </a>
+          <a href="dia5.html" class="dia-medalhao" aria-label="Dia 5. O Descontrole da Ira">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">V</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 5 de 33</div>
+              <div class="dia-titulo">O Descontrole da Ira</div>
+              <div class="dia-tema">A falta de controle pela ira</div>
+            </div>
+          </a>
+          <a href="dia6.html" class="dia-medalhao" aria-label="Dia 6. A Concupiscência do Paladar">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VI</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 6 de 33</div>
+              <div class="dia-titulo">A Concupiscência do Paladar</div>
+              <div class="dia-tema">A gula</div>
+            </div>
+          </a>
+          <a href="dia7.html" class="dia-medalhao" aria-label="Dia 7. A Concupiscência da Carne">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VII</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 7 de 33</div>
+              <div class="dia-titulo">A Concupiscência da Carne</div>
+              <div class="dia-tema">A luxúria</div>
+            </div>
+          </a>
+          <a href="dia8.html" class="dia-medalhao" aria-label="Dia 8. A Concupiscência dos Olhos">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VIII</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 8 de 33</div>
+              <div class="dia-titulo">A Concupiscência dos Olhos</div>
+              <div class="dia-tema">O dinheiro e o consumismo</div>
+            </div>
+          </a>
+          <a href="dia9.html" class="dia-medalhao" aria-label="Dia 9. A Tibieza da Alma">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">IX</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 9 de 33</div>
+              <div class="dia-titulo">A Tibieza da Alma</div>
+              <div class="dia-tema">A preguiça que adia tudo</div>
+            </div>
+          </a>
+          <a href="dia10.html" class="dia-medalhao" aria-label="Dia 10. A Incoerência na Vida">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">X</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 10 de 33</div>
+              <div class="dia-titulo">A Incoerência na Vida</div>
+              <div class="dia-tema">A incoerência</div>
+            </div>
+          </a>
+          <a href="dia11.html" class="dia-medalhao" aria-label="Dia 11. A Dissipação dos Sentidos">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">XI</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 11 de 33</div>
+              <div class="dia-titulo">A Dissipação dos Sentidos</div>
+              <div class="dia-tema">As telas e a alienação</div>
+            </div>
+          </a>
+          <a href="dia12.html" class="dia-medalhao" aria-label="Dia 12. As Falsas Doutrinas">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">XII</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 12 de 33</div>
+              <div class="dia-titulo">As Falsas Doutrinas</div>
+              <div class="dia-tema">A curiosidade vã e as falsas doutrinas</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+
+      <section class="fase">
+        <div class="fase-cabecalho">
+          <div class="fase-numero">Fase II</div>
+          <h2 class="fase-titulo">Primeira Semana</h2>
+          <p class="fase-subtitulo">Conhecimento de si mesmo</p>
+        </div>
+        <div class="grade-dias">
+          <a href="dia13.html" class="dia-medalhao" aria-label="Dia 13. O Orgulho que Mora em Mim">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">I</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 13 de 33</div>
+              <div class="dia-titulo">O Orgulho que Mora em Mim</div>
+              <div class="dia-tema">O retrato de São Luís Maria</div>
+            </div>
+          </a>
+          <a href="dia14.html" class="dia-medalhao" aria-label="Dia 14. As Feridas que Não Vejo">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">II</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 14 de 33</div>
+              <div class="dia-titulo">As Feridas que Não Vejo</div>
+              <div class="dia-tema">As feridas que carrego sem saber</div>
+            </div>
+          </a>
+          <a href="dia15.html" class="dia-medalhao" aria-label="Dia 15. O Pecado que Volta">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">III</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 15 de 33</div>
+              <div class="dia-titulo">O Pecado que Volta</div>
+              <div class="dia-tema">Os meus pecados habituais</div>
+            </div>
+          </a>
+          <a href="dia16.html" class="dia-medalhao" aria-label="Dia 16. As Inclinações do Coração">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">IV</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 16 de 33</div>
+              <div class="dia-titulo">As Inclinações do Coração</div>
+              <div class="dia-tema">As más inclinações que me dominam</div>
+            </div>
+          </a>
+          <a href="dia17.html" class="dia-medalhao" aria-label="Dia 17. Onde Eu Ainda Resisto">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">V</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 17 de 33</div>
+              <div class="dia-titulo">Onde Eu Ainda Resisto</div>
+              <div class="dia-tema">A resistência mais teimosa à graça</div>
+            </div>
+          </a>
+          <a href="dia18.html" class="dia-medalhao" aria-label="Dia 18. O Que Guardo Para Mim">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VI</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 18 de 33</div>
+              <div class="dia-titulo">O Que Guardo Para Mim</div>
+              <div class="dia-tema">Aquilo que ainda não entreguei</div>
+            </div>
+          </a>
+          <a href="dia19.html" class="dia-medalhao" aria-label="Dia 19. A Minha Pobreza">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VII</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 19 de 33</div>
+              <div class="dia-titulo">A Minha Pobreza</div>
+              <div class="dia-tema">Nada posso por mim mesmo</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+
+      <section class="fase">
+        <div class="fase-cabecalho">
+          <div class="fase-numero">Fase III</div>
+          <h2 class="fase-titulo">Segunda Semana</h2>
+          <p class="fase-subtitulo">Conhecimento da Santíssima Virgem</p>
+        </div>
+        <div class="grade-dias">
+          <a href="dia20.html" class="dia-medalhao" aria-label="Dia 20. Maria Concebida Sem Mancha">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">I</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 20 de 33</div>
+              <div class="dia-titulo">Maria Concebida Sem Mancha</div>
+              <div class="dia-tema">A Imaculada Conceição</div>
+            </div>
+          </a>
+          <a href="dia21.html" class="dia-medalhao" aria-label="Dia 21. Maria Mãe de Deus">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">II</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 21 de 33</div>
+              <div class="dia-titulo">Maria Mãe de Deus</div>
+              <div class="dia-tema">A Maternidade Divina</div>
+            </div>
+          </a>
+          <a href="dia22.html" class="dia-medalhao" aria-label="Dia 22. Maria Sempre Virgem">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">III</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 22 de 33</div>
+              <div class="dia-titulo">Maria Sempre Virgem</div>
+              <div class="dia-tema">A Virgindade Perpétua</div>
+            </div>
+          </a>
+          <a href="dia23.html" class="dia-medalhao" aria-label="Dia 23. Maria Canal da Graça">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">IV</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 23 de 33</div>
+              <div class="dia-titulo">Maria Canal da Graça</div>
+              <div class="dia-tema">A Mediação Universal</div>
+            </div>
+          </a>
+          <a href="dia24.html" class="dia-medalhao" aria-label="Dia 24. Maria Rainha do Céu e da Terra">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">V</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 24 de 33</div>
+              <div class="dia-titulo">Maria Rainha do Céu e da Terra</div>
+              <div class="dia-tema">A Realeza de Maria</div>
+            </div>
+          </a>
+          <a href="dia25.html" class="dia-medalhao" aria-label="Dia 25. Maria Elevada ao Céu">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VI</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 25 de 33</div>
+              <div class="dia-titulo">Maria Elevada ao Céu</div>
+              <div class="dia-tema">A Assunção corpo e alma</div>
+            </div>
+          </a>
+          <a href="dia26.html" class="dia-medalhao" aria-label="Dia 26. Imaculado Coração de Maria">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VII</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 26 de 33</div>
+              <div class="dia-titulo">Imaculado Coração de Maria</div>
+              <div class="dia-tema">A Maternidade Espiritual</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+
+      <section class="fase">
+        <div class="fase-cabecalho">
+          <div class="fase-numero">Fase IV</div>
+          <h2 class="fase-titulo">Terceira Semana</h2>
+          <p class="fase-subtitulo">Conhecimento de Jesus Cristo</p>
+        </div>
+        <div class="grade-dias">
+          <a href="dia27.html" class="dia-medalhao" aria-label="Dia 27. Jesus, o Único Mediador">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">I</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 27 de 33</div>
+              <div class="dia-titulo">Jesus, o Único Mediador</div>
+              <div class="dia-tema">Cristo Mediador de Redenção</div>
+            </div>
+          </a>
+          <a href="dia28.html" class="dia-medalhao" aria-label="Dia 28. O Verbo se Fez Carne">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">II</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 28 de 33</div>
+              <div class="dia-titulo">O Verbo se Fez Carne</div>
+              <div class="dia-tema">A Encarnação</div>
+            </div>
+          </a>
+          <a href="dia29.html" class="dia-medalhao" aria-label="Dia 29. Precioso Sangue de Jesus">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">III</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 29 de 33</div>
+              <div class="dia-titulo">Precioso Sangue de Jesus</div>
+              <div class="dia-tema">Cristo Crucificado</div>
+            </div>
+          </a>
+          <a href="dia30.html" class="dia-medalhao" aria-label="Dia 30. Presença Real na Eucaristia">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">IV</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 30 de 33</div>
+              <div class="dia-titulo">Presença Real na Eucaristia</div>
+              <div class="dia-tema">Cristo Eucarístico</div>
+            </div>
+          </a>
+          <a href="dia31.html" class="dia-medalhao" aria-label="Dia 31. Cristo Vencedor Sobre a Morte">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">V</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 31 de 33</div>
+              <div class="dia-titulo">Cristo Vencedor Sobre a Morte</div>
+              <div class="dia-tema">A Ressurreição</div>
+            </div>
+          </a>
+          <a href="dia32.html" class="dia-medalhao" aria-label="Dia 32. Coração Sagrado de Cristo">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VI</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 32 de 33</div>
+              <div class="dia-titulo">Coração Sagrado de Cristo</div>
+              <div class="dia-tema">O Reino do Coração</div>
+            </div>
+          </a>
+          <a href="dia33.html" class="dia-medalhao" aria-label="Dia 33. Jesus, Filho de Maria">
+            <div class="dia-circulo">
+              <div class="dia-rotulo">Dia</div>
+              <div class="dia-numero-romano">VII</div>
+            </div>
+            <div class="dia-info">
+              <div class="dia-numero-global">Dia 33 de 33</div>
+              <div class="dia-titulo">Jesus, Filho de Maria</div>
+              <div class="dia-tema">A véspera da Consagração</div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+
+    <footer class="rodape">
+      <div class="rodape-vinheta">· · ·</div>
+      <p class="rodape-jaculatoria">
+        Sou todo vosso, e tudo o que tenho vos pertence,<br>
+        <strong>ó meu amável Jesus,</strong><br>
+        por Maria, vossa Santa Mãe.
+      </p>
+      <div class="rodape-creditos">Ad Iesum per Mariam</div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

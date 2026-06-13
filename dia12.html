@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dia 12. As Falsas Doutrinas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0d1a2d;
+    --navy-deep: #0a1422;
+    --navy-soft: #142239;
+    --cream: #f4ecd8;
+    --gold: #c9a24b;
+    --gold-soft: #a8893d;
+    --gold-faint: rgba(201, 162, 75, 0.4);
+    --rust: #b85c3c;
+    --display: 'Cinzel', Georgia, serif;
+    --body: 'Cormorant Garamond', Georgia, serif;
+    --transition: 700ms cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;width:100%}
+  body{
+    background: var(--navy-deep);
+    color: var(--cream);
+    font-family: var(--body);
+    overflow:hidden;
+  }
+  .deck{
+    position:relative;
+    height:100vh;
+    width:100vw;
+    background: var(--navy-deep);
+  }
+  .deck::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse at top, rgba(201, 162, 75, 0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(201, 162, 75, 0.04) 0%, transparent 60%);
+    z-index:1;
+    pointer-events:none;
+  }
+  .slide{
+    position:absolute;inset:0;
+    display:flex;flex-direction:column;justify-content:center;align-items:center;
+    padding: 5vmin 8vmin;
+    opacity:0;visibility:hidden;
+    transform:translateX(40px);
+    transition:opacity var(--transition), transform var(--transition), visibility var(--transition);
+    z-index:2;
+    text-align:center;
+  }
+  .slide.active{opacity:1;visibility:visible;transform:translateX(0)}
+  .slide.prev{transform:translateX(-40px)}
+
+  /* === PORTAL DE ABERTURA === */
+  .portal-cabecalho{
+    font-family: var(--display);
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+  }
+  .portal-cabecalho .sep{
+    margin: 0 1em;
+    opacity: 0.5;
+  }
+  .portal-numero-grande{
+    font-family: var(--display);
+    color: var(--gold);
+    font-size: clamp(0.9rem, 1.4vw, 1.15rem);
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+  }
+  .portal-titulo{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(2.6rem, 5.6vw, 4.8rem);
+    line-height: 1.15;
+    color: var(--cream);
+    letter-spacing: 0.04em;
+    margin-bottom: 2rem;
+  }
+  .portal-vinheta{
+    color: var(--gold-faint);
+    font-size: 2rem;
+    letter-spacing: 0.5em;
+    margin: 1rem 0;
+  }
+  .portal-tema{
+    font-family: var(--body);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.66vw, 2.1rem);
+    line-height: 1.4;
+    color: var(--gold);
+    max-width: 50ch;
+  }
+
+  /* === MEDITAÇÃO === */
+  .slide-eyebrow{
+    font-family: var(--display);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .meditacao-texto{
+    font-family: var(--body);
+    font-weight: 400;
+    font-size: clamp(1.15rem, 1.95vw, 1.6rem);
+    line-height: 1.5;
+    color: var(--cream);
+    max-width: 64ch;
+    text-align: center;
+  }
+  .meditacao-texto p{ margin-bottom: 0.75rem; }
+  .meditacao-texto p:last-child{ margin-bottom: 0; }
+  .meditacao-texto strong{
+    font-family: var(--display);
+    font-weight: 500;
+    color: var(--gold);
+    letter-spacing: 0.04em;
+  }
+  .meditacao-texto em{
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  /* === CITAÇÃO DE MONTFORT === */
+  blockquote.tratado{
+    font-family: var(--body);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.65rem, 2.94vw, 2.35rem);
+    line-height: 1.55;
+    color: var(--cream);
+    max-width: 60ch;
+    position: relative;
+    padding: 0 3rem;
+    text-align: center;
+  }
+  blockquote.tratado::before, blockquote.tratado::after{
+    font-family: var(--display);
+    color: var(--gold);
+    font-size: 2.5em;
+    line-height: 0;
+    position: relative;
+    top: 0.35em;
+  }
+  blockquote.tratado::before{content:"\201C"; margin-right: 0.1em;}
+  blockquote.tratado::after{content:"\201D"; margin-left: 0.1em;}
+  blockquote.tratado cite{
+    display: block;
+    font-family: var(--display);
+    font-style: normal;
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    color: var(--gold-soft);
+    letter-spacing: 0.2em;
+    margin-top: 2rem;
+  }
+
+  /* === PARA O SEU DIA === */
+  .pratica-card{
+    background: rgba(201, 162, 75, 0.06);
+    border-left: 2px solid var(--gold);
+    padding: 2.5rem 3rem;
+    max-width: 62ch;
+    width: 100%;
+    text-align: left;
+  }
+  .pratica-rotulo{
+    font-family: var(--display);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+  .pratica-texto{
+    font-family: var(--body);
+    font-size: clamp(1.35rem, 2.3vw, 1.8rem);
+    line-height: 1.55;
+    color: var(--cream);
+  }
+  .pratica-texto p{ margin-bottom: 0.9rem; }
+  .pratica-texto p:last-child{ margin-bottom: 0; }
+  .pratica-texto strong{
+    color: var(--gold);
+    font-family: var(--display);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .pratica-texto em{
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  /* === PERGUNTA === */
+  .pergunta-bloco{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 56ch;
+    text-align: center;
+  }
+  .pergunta-rotulo{
+    font-family: var(--display);
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    font-weight: 500;
+  }
+  .pergunta-texto{
+    font-family: var(--body);
+    font-style: italic;
+    color: var(--cream);
+    font-size: clamp(2rem, 3.8vw, 3rem);
+    line-height: 1.4;
+  }
+  .pergunta-texto strong{
+    color: var(--gold);
+    font-family: var(--display);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* === ORAÇÕES === */
+  .oracoes-bloco{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 60ch;
+    width: 100%;
+    text-align: left;
+  }
+  .oracoes-titulo{
+    font-family: var(--display);
+    color: var(--cream);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .oracoes-titulo .acento{
+    color: var(--gold);
+    font-style: italic;
+    font-family: var(--body);
+    font-weight: 500;
+  }
+  .oracoes-lista{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 2rem 2.5rem;
+    background: rgba(201, 162, 75, 0.04);
+    border-top: 1px solid var(--gold-faint);
+    border-bottom: 1px solid var(--gold-faint);
+  }
+  .oracoes-item{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: baseline;
+    font-family: var(--body);
+    font-size: clamp(1.3rem, 2.24vw, 1.7rem);
+    color: var(--cream);
+    line-height: 1.4;
+  }
+  .oracoes-item .marca{
+    color: var(--gold);
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 0.85em;
+    letter-spacing: 0.1em;
+  }
+  .oracoes-item .nome{
+    font-style: italic;
+  }
+  .oracoes-item .nome strong{
+    color: var(--gold);
+    font-family: var(--display);
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* === JACULATÓRIA FINAL === */
+  .jaculatoria-slide{
+    font-family: var(--body);
+    font-style: italic;
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    line-height: 1.5;
+    color: var(--gold);
+    max-width: 30ch;
+    text-align: center;
+  }
+  .jaculatoria-slide .corpo{ color: var(--cream); }
+  .jaculatoria-slide .corpo strong{
+    color: var(--gold);
+    font-style: normal;
+    font-family: var(--display);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  /* === NAVEGAÇÃO === */
+  .counter{
+    position:fixed;bottom:2.8vmin;right:4vmin;
+    font-family: var(--display);
+    color:var(--gold-soft);
+    font-size:1.05rem;
+    font-variant-numeric:tabular-nums;
+    letter-spacing: 0.15em;
+    z-index:10;
+  }
+  .home-btn{
+    position:fixed;top:2.5vmin;left:4vmin;
+    font-family: var(--display);
+    color:var(--gold-soft);
+    font-size:0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    text-decoration:none;
+    z-index:10;
+    transition: color 0.3s ease;
+    padding: 0.5rem;
+  }
+  .home-btn:hover{ color: var(--gold); }
+
+  .nav{
+    position:fixed;top:50%;
+    transform:translateY(-50%);
+    background:none;border:none;
+    color:var(--cream);
+    opacity:.25;
+    font-size:3rem;
+    cursor:pointer;
+    padding:1rem;
+    z-index:10;
+    transition:opacity .2s;
+    font-family: var(--display);
+  }
+  .nav:hover{opacity:1}
+  .nav.left{left:1vmin}.nav.right{right:1vmin}
+
+  @media (prefers-reduced-motion: reduce){
+    .slide{transition:opacity .15s linear;transform:none!important}
+  }
+  @media (max-width: 768px){
+    .slide{padding: 4vmin 5vmin}
+    .home-btn{ font-size: 0.65rem; letter-spacing: 0.2em; }
+  }
+</style>
+</head>
+<body>
+  <div class="deck">
+
+    <!-- 1. PORTAL -->
+    <section class="slide active">
+      <div class="portal-cabecalho">
+        Dia 12 de 33<span class="sep">·</span>Doze Dias Preliminares<span class="sep">·</span>12 de 12
+      </div>
+      <h1 class="portal-titulo">As Falsas Doutrinas</h1>
+      <div class="portal-vinheta">· · ·</div>
+      <p class="portal-tema">A curiosidade vã e as falsas doutrinas</p>
+    </section>
+
+    <!-- 2. PALAVRA DE MONTFORT -->
+    <section class="slide">
+      <div class="slide-eyebrow">A palavra de Montfort</div>
+      <blockquote class="tratado">
+        O verdadeiro devoto de Maria não cai jamais em heresia formal nem em ilusão decisiva. Pode ser que erre materialmente, como qualquer homem, mas Maria, sua boa Mãe, o protegerá contra o erro perigoso, e o conduzirá pela mão à verdade da Igreja.
+        <cite>Tratado da Verdadeira Devoção, § 167</cite>
+      </blockquote>
+    </section>
+
+
+    <!-- 3. MEDITAÇÃO -->
+    <section class="slide">
+      <div class="slide-eyebrow">A meditação de hoje</div>
+      <div class="meditacao-texto">
+      <p>São Paulo avisou que viriam tempos em que muitos cristãos deixariam a sã doutrina e se voltariam para fábulas. Esses tempos chegaram. Católicos batizados que consultam tarô, leem mapa astral, falam de energias, seguem influenciadores de espiritualidade vazia.</p>
+      <p>O pecado tem nome antigo: <strong>curiosidade vã</strong>. Não a busca pela verdade, que é boa. Mas a que busca conhecimento ilícito, sensação de iniciado, conexão com o oculto. É a serpente do Éden oferecendo de novo o fruto da árvore proibida: <em>"sereis como deuses"</em>.</p>
+      <p>O mundo legitima esse pecado: <em>"Sou espiritualizado, mas não religioso. Sigo o universo. Tenho meu próprio caminho."</em> Frases bonitas que escondem a recusa de se submeter à única revelação verdadeira: <strong>Cristo, único Mediador</strong>.</p>
+    </div>
+    </section>
+
+    <!-- 4. CITAÇÃO BÍBLICA -->
+    <section class="slide">
+      <div class="slide-eyebrow">A palavra que sustenta</div>
+      <blockquote class="tratado">
+        Virá um tempo em que os homens não suportarão a sã doutrina. Pelo contrário, conforme os próprios desejos, hão de reunir mestres para si, levados pela coceira de ouvir novidades.
+        <cite>2 Timóteo 4, 3</cite>
+      </blockquote>
+    </section>
+
+    <!-- 5. PARA O SEU DIA -->
+    <section class="slide">
+      <div class="pratica-card">
+        <div class="pratica-rotulo">Para o seu dia</div>
+        <div class="pratica-texto">
+      <p>Hoje, faça uma <strong>limpeza espiritual no que você consome</strong>.</p>
+      <p>Aplicativos de horóscopo, contas de tarô, canais de espiritualidade vaga, livros de autoajuda que misturam tudo. Apague, deixe de seguir, desinscreva-se.</p>
+      <p>E faça o contrário: <em>siga ao menos um canal católico fiel</em>. <strong>Encha o que você vai esvaziar.</strong> Amanhã começa a Primeira Semana.</p>
+    </div>
+      </div>
+    </section>
+
+    <!-- 6. PERGUNTA -->
+    <section class="slide">
+      <div class="pergunta-bloco">
+        <div class="pergunta-rotulo">A pergunta para carregar</div>
+        <p class="pergunta-texto">O que entra na minha cabeça todo dia, e quem está alimentando essa entrada?</p>
+      </div>
+    </section>
+
+    <!-- 7. ORAÇÕES -->
+    <section class="slide">
+      <div class="oracoes-bloco">
+        <h2 class="oracoes-titulo">As <span class="acento">orações</span> de hoje</h2>
+        <div class="oracoes-lista">
+          <div class="oracoes-item">
+            <span class="marca">1.</span>
+            <span class="nome"><strong>Veni Creator Spiritus</strong></span>
+          </div>
+          <div class="oracoes-item">
+            <span class="marca">2.</span>
+            <span class="nome"><strong>Ave Maris Stella</strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 8. JACULATÓRIA -->
+    <section class="slide">
+      <p class="jaculatoria-slide">
+        <span class="corpo">Sou todo vosso,<br>e tudo o que tenho vos pertence,<br><strong>ó meu amável Jesus,</strong><br>por Maria,<br>vossa Santa Mãe.</span>
+      </p>
+    </section>
+
+  </div>
+
+  <a class="home-btn" href="33dias.html">← os 33 dias</a>
+  <button class="nav left"  id="prev" aria-label="Slide anterior">‹</button>
+  <button class="nav right" id="next" aria-label="Próximo slide">›</button>
+  <div class="counter" id="counter"></div>
+
+<script>
+  const slides = Array.from(document.querySelectorAll('.slide'));
+  const counter = document.getElementById('counter');
+  let i = 0;
+
+  function go(n){
+    if(n < 0 || n >= slides.length) return;
+    slides.forEach((s, idx) => {
+      s.classList.remove('active','prev');
+      if(idx === n) s.classList.add('active');
+      else if(idx < n) s.classList.add('prev');
+    });
+    counter.textContent = String(n+1).padStart(2,'0') + ' / ' + String(slides.length).padStart(2,'0');
+    i = n;
+  }
+
+  document.getElementById('next').onclick = () => go(i+1);
+  document.getElementById('prev').onclick = () => go(i-1);
+  document.addEventListener('keydown', e => {
+    if(e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); go(i+1); }
+    if(e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); go(i-1); }
+    if(e.key === 'Home') go(0);
+    if(e.key === 'End') go(slides.length-1);
+  });
+
+  let x0 = null;
+  document.addEventListener('touchstart', e => x0 = e.touches[0].clientX, {passive:true});
+  document.addEventListener('touchend', e => {
+    if(x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if(Math.abs(dx) > 50) go(dx < 0 ? i+1 : i-1);
+    x0 = null;
+  }, {passive:true});
+
+  go(0);
+</script>
+</body>
+</html>
