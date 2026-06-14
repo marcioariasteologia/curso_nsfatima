@@ -41,10 +41,9 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    /* Imagem como fundo, posicionada para a direita (onde está a Aparecida) */
     background-image: var(--bg-image);
     background-size: cover;
-    background-position: 75% center;
+    background-position: 80% center;
     background-repeat: no-repeat;
     background-color: var(--navy-deep);
   }
@@ -273,13 +272,16 @@
     gap: 5rem;
     align-items: center;
   }
-  .destaque-apresentacao{
+  .destaque-portais{
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+    gap: 5rem;
     padding-bottom: 2.5rem;
     border-bottom: 1px solid var(--gold-faint);
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
+    flex-wrap: wrap;
   }
   .grade-oito{
     display: grid;
@@ -378,6 +380,9 @@
   }
   .medalhao.principal .medalhao-numero.estrela{
     font-size: 5rem;
+  }
+  .medalhao.principal .medalhao-numero{
+    font-size: 4.2rem;
   }
   .medalhao.principal .medalhao-info{ max-width: 280px; }
   .medalhao.principal .medalhao-titulo{ font-size: 1.2rem; }
@@ -521,7 +526,7 @@
       <div class="grade-encontros">
 
 
-        <div class="destaque-apresentacao">
+        <div class="destaque-portais">
           <a href="apresentacao.html" class="medalhao principal" aria-label="Apresentação. O Santo, o Manuscrito e a Consagração">
             <div class="medalhao-circulo">
               <div class="medalhao-numero estrela">✦</div>
@@ -529,6 +534,15 @@
             <div class="medalhao-info">
               <div class="medalhao-encontro">Apresentação</div>
               <div class="medalhao-titulo">O Santo, o Manuscrito e a Consagração</div>
+            </div>
+          </a>
+          <a href="33dias.html" class="medalhao principal" aria-label="Os 33 Dias de Preparação">
+            <div class="medalhao-circulo">
+              <div class="medalhao-numero">33</div>
+            </div>
+            <div class="medalhao-info">
+              <div class="medalhao-encontro">33 Dias</div>
+              <div class="medalhao-titulo">A Preparação para a Consagração</div>
             </div>
           </a>
         </div>
