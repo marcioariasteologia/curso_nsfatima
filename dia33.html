@@ -366,6 +366,20 @@
     .slide{padding: 4vmin 5vmin}
     .home-btn{ font-size: 0.65rem; letter-spacing: 0.2em; }
   }
+
+  /* Link das orações para a página oracoes.html */
+  .oracao-link{
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px dotted var(--gold-faint);
+    transition: all 0.3s ease;
+  }
+  .oracao-link:hover{
+    border-bottom-color: var(--gold);
+  }
+  .oracao-link:hover strong{
+    color: var(--gold-bright) !important;
+  }
 </style>
 </head>
 <body>
@@ -436,15 +450,15 @@
         <div class="oracoes-lista">
           <div class="oracoes-item">
             <span class="marca">1.</span>
-            <span class="nome"><strong>Ave Maris Stella</strong></span>
+            <span class="nome"><a href="oracoes.html#ave-maris-stella" class="oracao-link"><strong>Ave Maris Stella</strong></a></span>
           </div>
           <div class="oracoes-item">
             <span class="marca">2.</span>
-            <span class="nome"><strong>Ladainha do Sagrado Coração</strong></span>
+            <span class="nome"><a href="oracoes.html#ladainha-sagrado-coracao" class="oracao-link"><strong>Ladainha do Sagrado Coração</strong></a></span>
           </div>
           <div class="oracoes-item">
             <span class="marca">3.</span>
-            <span class="nome"><strong>Ó Jesus vivendo em Maria</strong></span>
+            <span class="nome"><a href="oracoes.html#o-jesus-vivendo-em-maria" class="oracao-link"><strong>Ó Jesus vivendo em Maria</strong></a></span>
           </div>
         </div>
       </div>
