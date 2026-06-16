@@ -225,7 +225,7 @@
   }
   .oracao-corpo p{
     margin-bottom: 1.5rem;
-    text-align: center;
+    text-align: justify;
   }
   .oracao-corpo em{
     color: var(--gold);
@@ -240,7 +240,7 @@
 
   /* === LADAINHA === */
   .ladainha-instrucao{
-    text-align: center;
+    text-align: center !important;
     color: var(--cream);
   }
   .ladainha-bloco{
@@ -248,7 +248,7 @@
     max-width: 64ch;
   }
   .ladainha-bloco p{
-    text-align: left;
+    text-align: left !important;
     padding-left: 2rem;
     margin-bottom: 0.6rem;
     text-indent: -2rem;
@@ -260,13 +260,13 @@
     letter-spacing: 0.04em;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    padding-left: 0;
-    text-indent: 0;
+    padding-left: 0 !important;
+    text-indent: 0 !important;
     font-weight: 500;
     font-size: clamp(1.2rem, 1.9vw, 1.45rem);
   }
   .ladainha-final{
-    text-align: center;
+    text-align: center !important;
     margin: 2.5rem auto 1.5rem;
     font-family: var(--display);
     color: var(--gold);
@@ -290,7 +290,7 @@
     border-left: 2px solid var(--gold);
   }
   .ladainha-oremos p{
-    text-align: left;
+    text-align: left !important;
     margin-bottom: 1rem;
   }
   .ladainha-oremos p:last-child{ margin-bottom: 0; }
@@ -302,9 +302,37 @@
     color: var(--cream);
     font-size: clamp(1.4rem, 2.2vw, 1.8rem);
     line-height: 1.7;
-    text-align: center;
+    text-align: center !important;
     max-width: 50ch;
-    margin: 0 auto 2rem;
+    margin: 2rem auto;
+  }
+
+  /* === PEQUENA COROA === */
+  .instrucao-coroa{
+    text-align: center !important;
+    color: var(--cream-soft);
+    font-style: italic;
+    margin: 2rem auto !important;
+    max-width: 56ch;
+  }
+  .coroa-bloco{
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background: rgba(201, 162, 75, 0.04);
+    border-left: 2px solid var(--gold);
+    max-width: 56ch;
+  }
+  .coroa-bloco p{
+    margin: 0.4rem 0 !important;
+    text-align: left !important;
+  }
+  .coroa-cabecalho{
+    font-family: var(--display);
+    color: var(--gold);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 1rem !important;
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   }
 
   /* === FÓRMULA DE CONSAGRAÇÃO === */
@@ -316,6 +344,22 @@
     text-align: left !important;
     color: var(--cream);
     font-size: clamp(1.18rem, 1.92vw, 1.55rem);
+  }
+
+  /* === ORAÇÃO ABRASADA - LINHA FINAL "DEUS SÓ" === */
+  .formula-final{
+    text-align: center !important;
+    font-family: var(--display);
+    color: var(--gold-bright);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+    margin: 3rem auto 1rem !important;
+    padding: 1.5rem;
+    border-top: 1px solid var(--gold-faint);
+    border-bottom: 1px solid var(--gold-faint);
+    max-width: 30ch;
+    font-weight: 600;
   }
 
   /* === VOLTAR AO ÍNDICE === */
@@ -400,7 +444,7 @@
       <h1 class="cabecalho-titulo">As Orações<br>da Consagração</h1>
 
       <p class="cabecalho-subtitulo">
-        Reúne todas as orações prescritas por São Luís Maria de Montfort para os 33 dias de preparação, e a fórmula solene a ser rezada no dia da consagração.
+        Reúne todas as orações prescritas por São Luís Maria de Montfort para os 33 dias de preparação, conforme indicado no Tratado da Verdadeira Devoção à Santíssima Virgem.
       </p>
 
       <a href="index.html" class="voltar-curso">← voltar ao curso</a>
@@ -426,16 +470,48 @@
               <span class="indice-numero">04</span>
               <span class="indice-nome">Ladainha de Nossa Senhora</span>
             </a>
-            <a href="#ladainha-sagrado-coracao" class="indice-item">
+            <a href="#ladainha-santissimo-nome" class="indice-item">
               <span class="indice-numero">05</span>
+              <span class="indice-nome">Ladainha do Santíssimo Nome de Jesus</span>
+            </a>
+            <a href="#ladainha-sagrado-coracao" class="indice-item">
+              <span class="indice-numero">06</span>
               <span class="indice-nome">Ladainha do Sagrado Coração</span>
             </a>
-            <a href="#o-jesus-vivendo-em-maria" class="indice-item">
-              <span class="indice-numero">06</span>
-              <span class="indice-nome">Ó Jesus vivendo em Maria</span>
+            <a href="#oracao-santo-agostinho" class="indice-item">
+              <span class="indice-numero">07</span>
+              <span class="indice-nome">Oração de Santo Agostinho</span>
+            </a>
+            <a href="#pequena-coroa" class="indice-item">
+              <span class="indice-numero">08</span>
+              <span class="indice-nome">Pequena Coroa de Doze Estrelas</span>
+            </a>
+            <a href="#oracao-abrasada-dia1" class="indice-item">
+              <span class="indice-numero">09</span>
+              <span class="indice-nome">Oração Abrasada · Dia 1</span>
+            </a>
+            <a href="#oracao-abrasada-dia2" class="indice-item">
+              <span class="indice-numero">10</span>
+              <span class="indice-nome">Oração Abrasada · Dia 2</span>
+            </a>
+            <a href="#oracao-abrasada-dia3" class="indice-item">
+              <span class="indice-numero">11</span>
+              <span class="indice-nome">Oração Abrasada · Dia 3</span>
+            </a>
+            <a href="#oracao-abrasada-dia4" class="indice-item">
+              <span class="indice-numero">12</span>
+              <span class="indice-nome">Oração Abrasada · Dia 4</span>
+            </a>
+            <a href="#oracao-abrasada-dia5" class="indice-item">
+              <span class="indice-numero">13</span>
+              <span class="indice-nome">Oração Abrasada · Dia 5</span>
+            </a>
+            <a href="#oracao-abrasada-dia6" class="indice-item">
+              <span class="indice-numero">14</span>
+              <span class="indice-nome">Oração Abrasada · Dia 6</span>
             </a>
             <a href="#formula-consagracao" class="indice-item">
-              <span class="indice-numero">07</span>
+              <span class="indice-numero">15</span>
               <span class="indice-nome">Fórmula da Consagração</span>
             </a>
       </div>
@@ -447,7 +523,7 @@
           <h2 class="oracao-titulo">Veni Creator Spiritus</h2>
           <p class="oracao-subtitulo">Hino ao Espírito Santo</p>
         </div>
-        <p class="oracao-intro">Hino atribuído a Rábano Mauro, no século IX. Cantado pela Igreja há mais de mil anos, especialmente nas grandes ocasiões em que se invoca o Espírito Santo: Pentecostes, ordenações, Concílios, e nesta preparação para a Consagração, durante os doze dias preliminares.</p>
+        <p class="oracao-intro">Hino atribuído a Rábano Mauro, no século IX. Cantado pela Igreja há mais de mil anos, especialmente nas grandes ocasiões em que se invoca o Espírito Santo: Pentecostes, ordenações, Concílios. Prescrito por São Luís Maria nos doze dias preliminares.</p>
         <div class="oracao-corpo">
 
           <p>Vinde, ó Espírito Criador,<br>
@@ -494,7 +570,7 @@
           <h2 class="oracao-titulo">Ave Maris Stella</h2>
           <p class="oracao-subtitulo">Hino mariano · Estrela do Mar</p>
         </div>
-        <p class="oracao-intro">Hino mariano dos mais antigos da Igreja, com origem provável no século VIII. É a oração mariana escolhida por São Luís Maria de Montfort para acompanhar todos os 33 dias da preparação, do primeiro ao último. A imagem da "Estrela do Mar" evoca Maria como guia segura na travessia da vida.</p>
+        <p class="oracao-intro">Hino mariano dos mais antigos da Igreja, com origem provável no século VIII. É a oração mariana escolhida por São Luís Maria de Montfort para acompanhar todas as fases dos 33 dias. A imagem da Estrela do Mar evoca Maria como guia segura na travessia da vida.</p>
         <div class="oracao-corpo">
 
           <p>Ave, Estrela do Mar,<br>
@@ -539,9 +615,9 @@
       <section class="oracao" id="ladainha-espirito-santo">
         <div class="oracao-cabecalho">
           <h2 class="oracao-titulo">Ladainha do Espírito Santo</h2>
-          <p class="oracao-subtitulo">Oração para a Primeira Semana</p>
+          <p class="oracao-subtitulo">Oração para a 1ª, 2ª e 3ª Semanas</p>
         </div>
-        <p class="oracao-intro">Ladainha tradicional da Igreja católica, rezada como invocação do Espírito Santo. Acompanha os sete dias da Primeira Semana, dedicados ao conhecimento de si mesmo. Pede-se ao Espírito que ilumine o interior da alma e mostre suas próprias misérias para que possam ser entregues a Maria.</p>
+        <p class="oracao-intro">Ladainha tradicional da Igreja para invocar o Espírito Santo. Acompanha as três semanas dos 33 dias, pedindo a luz divina para o conhecimento de si, da Santíssima Virgem e de Jesus Cristo.</p>
         <div class="oracao-corpo">
 
           <p class="ladainha-instrucao">Senhor, tende piedade de nós.<br>
@@ -614,9 +690,9 @@
       <section class="oracao" id="ladainha-loreto">
         <div class="oracao-cabecalho">
           <h2 class="oracao-titulo">Ladainha de Nossa Senhora</h2>
-          <p class="oracao-subtitulo">Ladainha de Loreto · Oração para a Segunda Semana</p>
+          <p class="oracao-subtitulo">Ladainha de Loreto · Oração para a 2ª Semana</p>
         </div>
-        <p class="oracao-intro">A mais antiga e venerada ladainha mariana da Igreja, popularizada no Santuário de Loreto, na Itália, no século XVI. Acompanha os sete dias da Segunda Semana, dedicados ao conhecimento da Santíssima Virgem. Cada invocação contempla um título, virtude ou privilégio de Maria.</p>
+        <p class="oracao-intro">A mais antiga e venerada ladainha mariana, popularizada no Santuário de Loreto, na Itália, no século XVI. Acompanha os dias da 2ª Semana, dedicados ao conhecimento da Santíssima Virgem. Cada invocação contempla um título, virtude ou privilégio de Maria.</p>
         <div class="oracao-corpo">
 
           <p class="ladainha-instrucao">Senhor, tende piedade de nós.<br>
@@ -734,12 +810,130 @@
       </section>
 
 
+      <section class="oracao" id="ladainha-santissimo-nome">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Ladainha do Santíssimo Nome de Jesus</h2>
+          <p class="oracao-subtitulo">Oração para a 3ª Semana · Conforme o Tratado</p>
+        </div>
+        <p class="oracao-intro">Ladainha prescrita por São Luís Maria de Montfort para a 3ª Semana, conforme indica no § 230 do Tratado. Invoca o Santo Nome de Jesus em suas múltiplas dimensões: como Filho de Deus, modelo das virtudes e Salvador do mundo. O Santo Nome é refúgio do cristão na luta espiritual.</p>
+        <div class="oracao-corpo">
+
+          <p class="ladainha-instrucao">Senhor, tende piedade de nós.<br>
+          <em>Senhor, tende piedade de nós.</em></p>
+
+          <p class="ladainha-instrucao">Jesus Cristo, tende piedade de nós.<br>
+          <em>Jesus Cristo, tende piedade de nós.</em></p>
+
+          <p class="ladainha-instrucao">Senhor, tende piedade de nós.<br>
+          <em>Senhor, tende piedade de nós.</em></p>
+
+          <p class="ladainha-instrucao">Jesus Cristo, ouvi-nos.<br>
+          <em>Jesus Cristo, ouvi-nos.</em></p>
+
+          <p class="ladainha-instrucao">Jesus Cristo, atendei-nos.<br>
+          <em>Jesus Cristo, atendei-nos.</em></p>
+
+          <div class="ladainha-bloco">
+            <p>Deus Pai dos Céus, <em>tende piedade de nós.</em></p>
+            <p>Deus Filho, Redentor do mundo, <em>tende piedade de nós.</em></p>
+            <p>Deus Espírito Santo, <em>tende piedade de nós.</em></p>
+            <p>Santíssima Trindade que sois um só Deus, <em>tende piedade de nós.</em></p>
+          </div>
+
+          <div class="ladainha-bloco">
+            <p class="ladainha-cabecalho">Jesus,</p>
+            <p>Filho de Deus vivo, <em>tende piedade de nós.</em></p>
+            <p>esplendor do Pai, <em>tende piedade de nós.</em></p>
+            <p>pureza da luz eterna, <em>tende piedade de nós.</em></p>
+            <p>Rei da glória, <em>tende piedade de nós.</em></p>
+            <p>sol de justiça, <em>tende piedade de nós.</em></p>
+            <p>Filho da Virgem Maria, <em>tende piedade de nós.</em></p>
+            <p>amável, <em>tende piedade de nós.</em></p>
+            <p>admirável, <em>tende piedade de nós.</em></p>
+            <p>Deus forte, <em>tende piedade de nós.</em></p>
+            <p>Pai do futuro século, <em>tende piedade de nós.</em></p>
+            <p>Anjo do grande conselho, <em>tende piedade de nós.</em></p>
+            <p>poderosíssimo, <em>tende piedade de nós.</em></p>
+            <p>pacientíssimo, <em>tende piedade de nós.</em></p>
+            <p>obedientíssimo, <em>tende piedade de nós.</em></p>
+            <p>manso e humilde de coração, <em>tende piedade de nós.</em></p>
+            <p>que amais a castidade, <em>tende piedade de nós.</em></p>
+            <p>que nos amais, <em>tende piedade de nós.</em></p>
+            <p>Deus da paz, <em>tende piedade de nós.</em></p>
+            <p>autor da vida, <em>tende piedade de nós.</em></p>
+            <p>modelo das virtudes, <em>tende piedade de nós.</em></p>
+            <p>zelador das almas, <em>tende piedade de nós.</em></p>
+            <p>nosso Deus, <em>tende piedade de nós.</em></p>
+            <p>nosso refúgio, <em>tende piedade de nós.</em></p>
+            <p>Pai dos pobres, <em>tende piedade de nós.</em></p>
+            <p>tesouro dos fiéis, <em>tende piedade de nós.</em></p>
+            <p>bom Pastor, <em>tende piedade de nós.</em></p>
+            <p>luz verdadeira, <em>tende piedade de nós.</em></p>
+            <p>sabedoria eterna, <em>tende piedade de nós.</em></p>
+            <p>bondade infinita, <em>tende piedade de nós.</em></p>
+            <p>nosso caminho e nossa vida, <em>tende piedade de nós.</em></p>
+            <p>alegria dos Anjos, <em>tende piedade de nós.</em></p>
+            <p>Rei dos Patriarcas, <em>tende piedade de nós.</em></p>
+            <p>Mestre dos Apóstolos, <em>tende piedade de nós.</em></p>
+            <p>Doutor dos Evangelistas, <em>tende piedade de nós.</em></p>
+            <p>fortaleza dos Mártires, <em>tende piedade de nós.</em></p>
+            <p>luz dos Confessores, <em>tende piedade de nós.</em></p>
+            <p>pureza das Virgens, <em>tende piedade de nós.</em></p>
+            <p>coroa de todos os Santos, <em>tende piedade de nós.</em></p>
+          </div>
+
+          <div class="ladainha-bloco">
+            <p>Sede-nos propício, <em>perdoai-nos, Jesus.</em></p>
+            <p>Sede-nos propício, <em>ouvi-nos, Jesus.</em></p>
+          </div>
+
+          <div class="ladainha-bloco">
+            <p>De todo mal, <em>livrai-nos, Jesus.</em></p>
+            <p>De todo pecado, <em>livrai-nos, Jesus.</em></p>
+            <p>De vossa ira, <em>livrai-nos, Jesus.</em></p>
+            <p>Das ciladas do demônio, <em>livrai-nos, Jesus.</em></p>
+            <p>Do espírito da impureza, <em>livrai-nos, Jesus.</em></p>
+            <p>Da morte eterna, <em>livrai-nos, Jesus.</em></p>
+            <p>Do desprezo das vossas inspirações, <em>livrai-nos, Jesus.</em></p>
+            <p>Pelo mistério da vossa santa Encarnação, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa natividade, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa infância, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa santíssima vida, <em>livrai-nos, Jesus.</em></p>
+            <p>Pelos vossos trabalhos, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa agonia e paixão, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa cruz e desamparo, <em>livrai-nos, Jesus.</em></p>
+            <p>Pelas vossas angústias, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa morte e sepultura, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa ressurreição, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa ascensão, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela instituição da Santíssima Eucaristia, <em>livrai-nos, Jesus.</em></p>
+            <p>Pelas vossas alegrias, <em>livrai-nos, Jesus.</em></p>
+            <p>Pela vossa glória, <em>livrai-nos, Jesus.</em></p>
+          </div>
+
+          <div class="ladainha-bloco">
+            <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>perdoai-nos, Jesus.</em></p>
+            <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>atendei-nos, Jesus.</em></p>
+            <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>tende piedade de nós, Jesus.</em></p>
+          </div>
+
+          <p class="ladainha-final">Jesus, ouvi-nos. <em>Jesus, atendei-nos.</em></p>
+
+          <div class="ladainha-oremos">
+            <p><strong>Oremos.</strong></p>
+            <p>Senhor Jesus Cristo, que dissestes: Pedi e recebereis, buscai e achareis, batei e abrir-se-vos-á; nós vos suplicamos que concedais a nós, que vo-lo pedimos, os sentimentos afetivos de vosso divino amor, a fim de que vos amemos de todo o coração, boca e obras, e nunca cessemos de vos louvar. Vós que viveis e reinais pelos séculos dos séculos. <em>Amém.</em></p>
+          </div>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
       <section class="oracao" id="ladainha-sagrado-coracao">
         <div class="oracao-cabecalho">
           <h2 class="oracao-titulo">Ladainha do Sagrado Coração</h2>
-          <p class="oracao-subtitulo">Oração para a Terceira Semana</p>
+          <p class="oracao-subtitulo">Oração para a 3ª Semana</p>
         </div>
-        <p class="oracao-intro">Ladainha aprovada por Leão XIII em 1899 para a oração pública da Igreja inteira. Composta por trinta e três invocações ao Coração de Jesus, o mesmo número dos anos terrenos do Salvador. Acompanha os sete dias da Terceira Semana, dedicados ao conhecimento de Jesus Cristo, fim último da consagração.</p>
+        <p class="oracao-intro">Ladainha aprovada por Leão XIII em 1899 para a oração pública da Igreja inteira. Acompanha a 3ª Semana, dedicada ao conhecimento de Jesus Cristo, fim último da consagração. Conforme indicação do § 230 do Tratado.</p>
         <div class="oracao-corpo">
 
           <p class="ladainha-instrucao">Senhor, tende piedade de nós.<br>
@@ -768,76 +962,290 @@
             <p class="ladainha-cabecalho">Coração de Jesus,</p>
             <p>Filho do Pai eterno, <em>tende piedade de nós.</em></p>
             <p>formado pelo Espírito Santo no seio da Virgem Mãe, <em>tende piedade de nós.</em></p>
-            <p>substancialmente unido ao Verbo de Deus, <em>tende piedade de nós.</em></p>
+            <p>unido substancialmente ao Verbo de Deus, <em>tende piedade de nós.</em></p>
             <p>de majestade infinita, <em>tende piedade de nós.</em></p>
             <p>templo santo de Deus, <em>tende piedade de nós.</em></p>
             <p>tabernáculo do Altíssimo, <em>tende piedade de nós.</em></p>
-            <p>casa de Deus e porta do céu, <em>tende piedade de nós.</em></p>
+            <p>casa de Deus e porta do Céu, <em>tende piedade de nós.</em></p>
             <p>fornalha ardente de caridade, <em>tende piedade de nós.</em></p>
-            <p>vaso de justiça e de amor, <em>tende piedade de nós.</em></p>
+            <p>receptáculo de justiça e de amor, <em>tende piedade de nós.</em></p>
             <p>cheio de bondade e de amor, <em>tende piedade de nós.</em></p>
             <p>abismo de todas as virtudes, <em>tende piedade de nós.</em></p>
-            <p>digníssimo de todo louvor, <em>tende piedade de nós.</em></p>
-            <p>rei e centro de todos os corações, <em>tende piedade de nós.</em></p>
-            <p>no qual estão todos os tesouros da sabedoria e da ciência, <em>tende piedade de nós.</em></p>
+            <p>digníssimo de todo o louvor, <em>tende piedade de nós.</em></p>
+            <p>Rei e centro de todos os corações, <em>tende piedade de nós.</em></p>
+            <p>no qual estão todos os tesouros da sabedoria e ciência, <em>tende piedade de nós.</em></p>
             <p>no qual habita toda a plenitude da divindade, <em>tende piedade de nós.</em></p>
-            <p>no qual o Pai pôs todas as suas complacências, <em>tende piedade de nós.</em></p>
-            <p>de cuja plenitude todos nós recebemos, <em>tende piedade de nós.</em></p>
-            <p>desejo dos eternos montes, <em>tende piedade de nós.</em></p>
-            <p>paciente e cheio de misericórdia, <em>tende piedade de nós.</em></p>
+            <p>no qual o Pai põe as suas complacências, <em>tende piedade de nós.</em></p>
+            <p>de cuja plenitude nós todos participamos, <em>tende piedade de nós.</em></p>
+            <p>desejo das colinas eternas, <em>tende piedade de nós.</em></p>
+            <p>paciente e misericordioso, <em>tende piedade de nós.</em></p>
             <p>rico para todos os que vos invocam, <em>tende piedade de nós.</em></p>
-            <p>fonte de vida e de santidade, <em>tende piedade de nós.</em></p>
-            <p>propiciação por nossos pecados, <em>tende piedade de nós.</em></p>
-            <p>saciado de opróbrios, <em>tende piedade de nós.</em></p>
-            <p>despedaçado pelos nossos pecados, <em>tende piedade de nós.</em></p>
+            <p>fonte de vida e santidade, <em>tende piedade de nós.</em></p>
+            <p>propiciação pelos nossos pecados, <em>tende piedade de nós.</em></p>
+            <p>saturado de opróbrios, <em>tende piedade de nós.</em></p>
+            <p>atribulado por causa de nossos crimes, <em>tende piedade de nós.</em></p>
             <p>feito obediente até a morte, <em>tende piedade de nós.</em></p>
-            <p>transpassado pela lança, <em>tende piedade de nós.</em></p>
-            <p>fonte de toda consolação, <em>tende piedade de nós.</em></p>
-            <p>vida e ressurreição nossa, <em>tende piedade de nós.</em></p>
-            <p>paz e reconciliação nossa, <em>tende piedade de nós.</em></p>
+            <p>atravessado pela lança, <em>tende piedade de nós.</em></p>
+            <p>fonte de toda a consolação, <em>tende piedade de nós.</em></p>
+            <p>nossa vida e ressurreição, <em>tende piedade de nós.</em></p>
+            <p>nossa paz e reconciliação, <em>tende piedade de nós.</em></p>
             <p>vítima dos pecadores, <em>tende piedade de nós.</em></p>
-            <p>salvação dos que em vós esperam, <em>tende piedade de nós.</em></p>
-            <p>esperança dos que em vós morrem, <em>tende piedade de nós.</em></p>
+            <p>salvação dos que esperam em vós, <em>tende piedade de nós.</em></p>
+            <p>esperança dos que expiram em vós, <em>tende piedade de nós.</em></p>
             <p>delícia de todos os santos, <em>tende piedade de nós.</em></p>
           </div>
 
           <div class="ladainha-bloco">
             <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>perdoai-nos, Senhor.</em></p>
-            <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>ouvi-nos, Senhor.</em></p>
+            <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>atendei-nos, Senhor.</em></p>
             <p>Cordeiro de Deus, que tirais o pecado do mundo, <em>tende piedade de nós.</em></p>
           </div>
 
-          <p class="ladainha-final">Jesus, manso e humilde de coração,<br>
-          <em>fazei o nosso coração semelhante ao vosso.</em></p>
+          <p class="ladainha-final">Jesus, manso e humilde de Coração,<br>
+          <em>fazei nosso coração semelhante ao vosso.</em></p>
 
           <div class="ladainha-oremos">
             <p><strong>Oremos.</strong></p>
-            <p>Deus todo-poderoso e eterno, lançai um olhar sobre o Coração de vosso amado Filho, e sobre os louvores e satisfações que Ele vos rende em nome dos pecadores. Apaziguados pelos seus méritos, concedei-nos o perdão que vos pedimos em nome do mesmo Jesus Cristo, vosso Filho, que convosco vive e reina, na unidade do Espírito Santo, por todos os séculos dos séculos. <em>Amém.</em></p>
+            <p>Deus onipotente e eterno, olhai para o Coração de vosso Filho diletíssimo e para os louvores e as satisfações que Ele, em nome dos pecadores, vos tributa; e aos que imploram a vossa misericórdia, concedei benigno o perdão, em nome do vosso mesmo Filho Jesus Cristo, que convosco vive e reina por todos os séculos dos séculos. <em>Amém.</em></p>
           </div>
                 </div>
         <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
       </section>
 
 
-      <section class="oracao" id="o-jesus-vivendo-em-maria">
+      <section class="oracao" id="oracao-santo-agostinho">
         <div class="oracao-cabecalho">
-          <h2 class="oracao-titulo">Ó Jesus vivendo em Maria</h2>
-          <p class="oracao-subtitulo">Oração tradicional da Companhia de Jesus · Terceira Semana</p>
+          <h2 class="oracao-titulo">Oração de Santo Agostinho</h2>
+          <p class="oracao-subtitulo">Oração para a 3ª Semana · Conforme o Tratado</p>
         </div>
-        <p class="oracao-intro">Oração breve composta pelo padre Jean-Jacques Olier, fundador dos Sulpicianos, no século XVII. Recolhe em poucas palavras todo o espírito da consagração: que o Cristo que viveu nove meses no seio de Maria venha viver em nós, e que sejamos consumidos pela glória do Pai.</p>
+        <p class="oracao-intro">Oração atribuída a Santo Agostinho, prescrita por São Luís Maria de Montfort para a 3ª Semana dos exercícios preparatórios, conforme o § 230 do Tratado. É súplica abrasada ao amor de Cristo, pedindo que o coração se inflame inteiramente por Ele.</p>
         <div class="oracao-corpo">
 
-          <p class="oracao-curta">Ó Jesus vivendo em Maria,<br>
-          vinde e vivei em vossos servos,<br>
-          em vosso espírito de santidade,<br>
-          na plenitude da vossa força,<br>
-          na verdade das vossas virtudes,<br>
-          na perfeição dos vossos caminhos,<br>
-          na comunhão dos vossos mistérios.</p>
+          <p>Vós sois, ó Jesus, o Cristo, meu Pai santo, meu Deus misericordioso, meu Rei infinitamente grande; sois meu bom pastor, meu único mestre, meu auxílio cheio de bondade, meu bem-amado de uma beleza maravilhosa, meu pão vivo, meu sacerdote eterno, meu guia para a pátria, minha verdadeira luz, minha santa doçura, meu reto caminho, sapiência minha preclara, minha pura simplicidade, minha paz e concórdia; sois, enfim, toda a minha salvaguarda, minha herança preciosa, minha eterna salvação.</p>
 
-          <p class="oracao-curta">Dominai todo poder inimigo<br>
-          em vosso Espírito,<br>
-          para a glória do Pai. Amém.</p>
+          <p>Ó Jesus Cristo, amável Senhor, por que em toda a minha vida amei, por que desejei outra coisa senão Vós? Onde estava eu quando não pensava em Vós? Ah! que, pelo menos, a partir deste momento meu coração só deseje a Vós e por Vós se abrase, Senhor Jesus!</p>
+
+          <p>Desejos de minha alma, correi, que já bastante tardastes; apressai-Vos para o fim a que aspirais; procurai em verdade Aquele que procurais.</p>
+
+          <p>Ó Jesus, anátema seja quem não Vos ama. Aquele que não Vos ama seja repleto de amarguras.</p>
+
+          <p>Ó doce Jesus, sede o amor, as delícias, a admiração de todo coração dignamente consagrado à vossa glória. Deus de meu coração e minha partilha, Jesus Cristo, que em Vós meu coração desfaleça, e sede Vós mesmo a minha vida.</p>
+
+          <p>Acenda-se em minha alma a brasa ardente de vosso amor e se converta num incêndio todo divino, a arder para sempre no altar de meu coração; que inflame o íntimo do meu ser, e abrase o âmago de minha alma; para que no dia de minha morte eu apareça diante de Vós inteiramente consumido em vosso amor. Assim seja. <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="pequena-coroa">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Pequena Coroa de Doze Estrelas</h2>
+          <p class="oracao-subtitulo">A Coroinha da Santíssima Virgem · Conforme o Tratado</p>
+        </div>
+        <p class="oracao-intro">Oração recomendada por São Luís Maria de Montfort no § 234 do Tratado, em honra dos doze privilégios e grandezas de Maria. Tem fundamento em Apocalipse 12, onde São João viu uma Mulher coroada de doze estrelas. Reza-se com três Pai-Nossos, doze Ave-Marias e três Glórias.</p>
+        <div class="oracao-corpo">
+
+          <p><strong>Versículo inicial:</strong></p>
+          <p>Dignai-Vos conceder-me que Vos louve, ó Virgem Sagrada;<br>
+          <em>dai-me força contra os vossos inimigos.</em></p>
+
+          <p class="instrucao-coroa">Em seguida, reza-se o Credo. Depois, em três blocos, cada um com:</p>
+
+          <div class="coroa-bloco">
+            <p class="coroa-cabecalho">Primeiro bloco · Os privilégios de Maria diante do Pai</p>
+            <p>1 Pai-Nosso</p>
+            <p>4 Ave-Marias</p>
+            <p>1 Glória ao Pai</p>
+          </div>
+
+          <div class="coroa-bloco">
+            <p class="coroa-cabecalho">Segundo bloco · Os privilégios de Maria diante do Filho</p>
+            <p>1 Pai-Nosso</p>
+            <p>4 Ave-Marias</p>
+            <p>1 Glória ao Pai</p>
+          </div>
+
+          <div class="coroa-bloco">
+            <p class="coroa-cabecalho">Terceiro bloco · Os privilégios de Maria diante do Espírito Santo</p>
+            <p>1 Pai-Nosso</p>
+            <p>4 Ave-Marias</p>
+            <p>1 Glória ao Pai</p>
+          </div>
+
+          <p class="instrucao-coroa">Ao final, reza-se a antiga oração mariana:</p>
+
+          <p class="oracao-curta">Sob a vossa proteção nos acolhemos, Santa Mãe de Deus;<br>
+          não desprezeis as nossas súplicas em nossas necessidades;<br>
+          mas livrai-nos sempre de todos os perigos,<br>
+          ó Virgem gloriosa e bendita. <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="oracao-abrasada-dia1">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Oração Abrasada · Dia 1</h2>
+          <p class="oracao-subtitulo">Suscitai homens de vossa destra</p>
+        </div>
+        <p class="oracao-intro">A Oração Abrasada (em francês, "Prière Embrasée") foi composta por São Luís Maria de Montfort para pedir a Deus missionários para a Companhia de Maria. É súplica de fogo, dividida pela edição em seis partes, rezada nos últimos seis dias da preparação à consagração.</p>
+        <div class="oracao-corpo">
+
+          <p>Lembrai-Vos, Senhor, de vossa Congregação que possuístes em vosso espírito desde toda a eternidade, ao pensardes nela desde o princípio; que possuístes em vossas mãos, quando tirastes o universo do nada desde o princípio; que possuístes em vosso Coração, quando vosso amado Filho, morrendo na cruz, a regou com seu Sangue e a consagrou por sua morte, confiando-a a sua Mãe Santíssima.</p>
+
+          <p>Atendei, Senhor, aos desígnios de vossa misericórdia, suscitai os homens de vossa destra, tais como os mostrastes a alguns de vossos maiores servos, dando-lhes conhecimentos proféticos: a um São Francisco de Paula, a um São Vicente Ferrer, a uma Santa Catarina de Sena e a tantas outras grandes almas no século passado, e até neste em que vivemos.</p>
+
+          <p>Onipotente Deus, lembrai-Vos desta Companhia ostentando sobre ela a onipotência de vosso braço, a qual não diminuiu, para fazê-la nascer e conduzi-la à perfeição. Renovai os prodígios, fazei milagres novos. Sintamos o auxílio de vosso braço.</p>
+
+          <p>Ó grande Deus, que das pedras brutas podeis fazer outros tantos filhos de Abraão, dizei uma só palavra como Deus e hão de vir bons operários para a vossa messe e bons missionários para a vossa Igreja.</p>
+
+          <p>Deus de bondade, lembrai-Vos de vossas antigas misericórdias, e por essas mesmas misericórdias lembrai-Vos desta Congregação; lembrai-Vos das promessas reiteradas que nos fizestes, por vossos profetas e pelo vosso próprio Filho, de nos atender em nossos pedidos justos. Lembrai-Vos das preces que há tantos séculos vossos servos e servas Vos dirigiram neste sentido; venham à vossa presença seus votos, seus soluços, suas lágrimas e seu sangue derramado, e poderosamente solicitem vossa misericórdia.</p>
+
+          <p>Mas lembrai-Vos sobretudo de vosso amado Filho. Sua agonia, sua confusão, seu amoroso queixume no Horto das Oliveiras, sua cruel morte e seu sangue derramado altamente Vos clamam misericórdia, a fim de que, por meio desta Congregação, seja seu império estabelecido sobre os escombros do de vossos inimigos.</p>
+
+          <p>Lembrai-Vos, Senhor, desta Comunidade nos efeitos de vossa justiça. É tempo de agir, Senhor, lançaram por terra a vossa Lei: é tempo de cumprir o que prometestes. Vossa divina lei é transgredida; vosso Evangelho, abandonado; torrentes de iniquidade inundam toda a terra, e arrastam até os vossos servos; a terra toda está desolada, a impiedade está sobre o trono, vosso santuário é profanado e a abominação entrou até no lugar santo.</p>
+
+          <p>Não cumpre que seja feita a vossa vontade assim na terra como no Céu, e que venha a nós o vosso reino? Todas as criaturas, até as mais insensíveis, gemem sob o peso dos pecados inumeráveis de Babilônia e pedem a vossa vinda para restabelecer todas as coisas. <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="oracao-abrasada-dia2">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Oração Abrasada · Dia 2</h2>
+          <p class="oracao-subtitulo">Desapegados de todo afeto terreno</p>
+        </div>
+        <p class="oracao-intro">Segunda parte da Oração Abrasada de São Luís Maria. Continua a súplica por missionários: homens livres de todo apego terreno, verdadeiros filhos de Maria, capazes de combater pelo Reino com o cajado da Cruz e a funda do Rosário.</p>
+        <div class="oracao-corpo">
+
+          <p>Senhor Jesus, lembrai-Vos de dar à vossa Mãe uma nova companhia, a fim de por Ela renovar todas as coisas, e terminar por Maria os anos da graça como por Ela os começastes. Dai filhos e servos à vossa Mãe; quando não, fazei que eu morra.</p>
+
+          <p>É por vossa Mãe que Vos imploro. Lembrai-Vos de suas entranhas e de seu seio, e não me rejeiteis; lembrai-Vos de Quem sois Filho, e atendei-me; lembrai-Vos do que Ela é para Vós e do que sois para Ela, e satisfazei meus votos.</p>
+
+          <p>Que Vos peço eu? Nada em meu favor, tudo para a vossa glória. Que Vos peço eu? O que podeis, e até ouso dizer, o que deveis conceder-me, como Deus verdadeiro que sois, a Quem todo poder foi dado no Céu e na terra, e como o melhor de todos os filhos, que amais infinitamente vossa Mãe.</p>
+
+          <p>Que Vos peço eu? Sacerdotes livres de vossa liberdade, desprendidos de tudo, sem pai, sem mãe, sem irmãos, sem irmãs, sem parentes segundo a carne, sem amigos segundo o mundo, sem bens, sem embaraços, sem cuidados e até sem vontade própria.</p>
+
+          <p>Escravos de vosso amor e de vossa vontade, homens segundo vosso Coração que, sem vontade própria que os macule e faça parar, executem todas as vossas vontades e lancem por terra todos os vossos inimigos, quais novos Davids, com o cajado da Cruz e a funda do santíssimo Rosário nas mãos.</p>
+
+          <p>Nuvens elevadas da terra e cheias de celeste orvalho que voem sem empecilhos, de todos os lados, conforme o sopro do Espírito Santo. Foi deles, em parte, que tiveram conhecimento vossos profetas, quando perguntaram: "Quem são estes, que voam como nuvens?"</p>
+
+          <p>Almas sempre à vossa mão, sempre prontas a obedecer-Vos, à voz de seus superiores, como Samuel: "Eis-me aqui!", sempre prontas a correr e a tudo sofrer, conVosco e por Vós, como os Apóstolos: "Vamos nós também para morrer com Ele."</p>
+
+          <p>Verdadeiros filhos de Maria, vossa Mãe Santíssima, engendrados e concebidos pela sua caridade, trazidos em seu seio, presos a seu peito, nutridos de seu leite, educados por sua solicitude, sustentados por seu braço e enriquecidos de suas graças.</p>
+
+          <p>Verdadeiros servos da Santíssima Virgem que, como outros tantos São Domingos, vão por toda parte, com o facho lúcido e ardente do santo Evangelho na boca, e o santo Rosário na mão, a ladrar como cães, a arder como fogos e a iluminar como sóis as trevas do mundo. <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="oracao-abrasada-dia3">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Oração Abrasada · Dia 3</h2>
+          <p class="oracao-subtitulo">Em luta com o demônio</p>
+        </div>
+        <p class="oracao-intro">Terceira parte da Oração Abrasada. Reconhece que os apóstolos dos últimos tempos enfrentarão grandes combates contra a serpente antiga, mas o calcanhar de Maria esmagará a cabeça da serpente.</p>
+        <div class="oracao-corpo">
+
+          <p>É verdade, grande Deus, que o demônio há de armar, como predissestes, grandes ciladas ao calcanhar desta mulher misteriosa, isto é, a esta pequena Companhia de seus filhos que surgirão próximo do fim do mundo; e que haverá grandes inimizades entre esta bendita posteridade de Maria e a raça maldita de Satanás.</p>
+
+          <p>Mas é esta uma inimizade toda divina, a única de que sejais autor: "porei inimizades". Porém, esses combates e essas perseguições, que os filhos e a raça de Belial farão à raça de vossa Mãe Santíssima, só servirão para melhor fazer resplandecer o poder de vossa graça, a coragem da virtude dos vossos servos e a autoridade de vossa Mãe.</p>
+
+          <p>Pois Lhe destes, desde o começo do mundo, a missão de esmagar esse soberbo, pela humildade de seu coração e de seu calcanhar: "Ela esmagará tua cabeça."</p>
+
+          <p>Não é melhor para mim morrer do que Vos ver, meu Deus, todos os dias, tão cruel e impunemente ofendido, e estar eu mesmo, todos os dias, e cada vez mais, em risco de ser arrastado pelas torrentes de iniquidade que se avolumam? Mil mortes me seriam mais toleráveis: enviai-me socorro do Céu ou levai a minha alma.</p>
+
+          <p>Se eu não tivesse a esperança de que, mais cedo ou mais tarde, haveis de ouvir este pobre pecador, nos interesses de vossa glória, como já ouvistes a tantos outros: "Este miserável clamou e o Senhor o ouviu", pedir-Vos-ia radicalmente com um profeta: "Tirai-me a vida".</p>
+
+          <p>Mas a confiança que tenho em vossa misericórdia faz-me dizer com outro profeta: "Não morrerei, mas viverei para narrar as obras do Senhor", até que possa dizer com Simeão: "Agora, Senhor, deixai vosso servo morrer em paz, segundo a vossa palavra. Porque meus olhos viram a salvação." <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="oracao-abrasada-dia4">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Oração Abrasada · Dia 4</h2>
+          <p class="oracao-subtitulo">Gerados pelo Espírito Santo em Maria</p>
+        </div>
+        <p class="oracao-intro">Quarta parte da Oração Abrasada. Volta-se ao Espírito Santo, pedindo que continue a formar com Maria os santos dos últimos tempos, como formou Cristo no seio dela. Profecia ardente do reino do Espírito Santo terminado num dilúvio de fogo.</p>
+        <div class="oracao-corpo">
+
+          <p>Divino Espírito Santo, lembrai-Vos de produzir e formar filhos de Deus, com vossa divina e fiel Esposa, Maria. Formastes Jesus Cristo, cabeça dos predestinados, com Ela e n'Ela, e é com Ela e n'Ela que deveis formar todos os seus membros.</p>
+
+          <p>Nenhuma pessoa divina engendrais na Divindade; mas só Vós formais todas as pessoas divinas fora da Divindade, e todos os santos que existiram e hão de existir até o fim do mundo são outras tantas obras de vosso amor unido a Maria Santíssima.</p>
+
+          <p>O reino especial de Deus Pai durou até o dilúvio e foi terminado por um dilúvio de água; o reino de Jesus Cristo foi terminado por um dilúvio de sangue; mas vosso reino, Espírito do Pai e do Filho, continua presentemente e será terminado por um dilúvio de fogo, de amor e de justiça.</p>
+
+          <p>Quando virá este dilúvio de fogo do puro amor, que deveis atear em toda a terra de um modo tão suave e tão veemente que todas as nações, os turcos, os idólatras e até mesmo os judeus hão de arder nele e se converter? "Não há quem se esconda de seu calor."</p>
+
+          <p>Seja ateado este divino fogo que Jesus Cristo veio trazer à terra, antes que ateeis o de vossa cólera que reduzirá toda a terra a cinzas. "Enviai o vosso Espírito e tudo será criado, e renovareis a face da terra": enviai à terra esse Espírito todo de fogo, para nela criar sacerdotes todos de fogo, por cujo ministério seja renovada a face da terra e reformada a vossa Igreja.</p>
+
+          <p>É uma congregação, uma assembleia, uma escolha, uma triagem de predestinados que deveis fazer no mundo e do mundo: "Eu vos escolhi do meio do mundo". É um rebanho de pacíficos cordeiros que deveis reunir entre tantos lobos; uma companhia de castas pombas e de águias reais entre tantos corvos; um enxame de laboriosas abelhas entre tantos zangões; uma manada de cervos ágeis entre tantas tartarugas; um batalhão de leões destemidos entre tantas lebres tímidas.</p>
+
+          <p>Ah! Senhor: "Congregai-nos dentre as nações"; congregai-nos, uni-nos, para que assim se renda toda a glória ao vosso nome santo e poderoso. <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="oracao-abrasada-dia5">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Oração Abrasada · Dia 5</h2>
+          <p class="oracao-subtitulo">Inteiramente confiantes na Providência</p>
+        </div>
+        <p class="oracao-intro">Quinta parte da Oração Abrasada. Contempla os apóstolos dos últimos tempos como figuras descritas pelo profeta, pobres confiantes na Providência, com asas prateadas da pomba e dourado dorso, transformados na Montanha que é Maria.</p>
+        <div class="oracao-corpo">
+
+          <p>Predissestes esta ilustre Companhia a vosso profeta, que a descreve em termos muito obscuros e misteriosos, mas inteiramente divinos.</p>
+
+          <p>Qual é, Senhor, esta chuva voluntária que separastes e escolhestes para vossa enfraquecida descendência, senão estes santos missionários, filhos de Maria, vossa Esposa, aos quais deveis congregar e separar do comum dos homens, para o bem de vossa Igreja, tão debilitada e maculada pelos crimes de seus filhos?</p>
+
+          <p>Quem são estes animais e estes pobres que habitarão em vossa herança, e serão aí nutridos com a divina doçura que lhes haveis preparado, senão estes pobres missionários abandonados à Providência e que transbordarão de vossas mais divinas delícias?</p>
+
+          <p>Estes imitadores dos apóstolos pregarão com uma grande força e virtude, tão grande e tão deslumbrante que hão de comover todos os espíritos e todos os corações nos lugares em que pregarem. A eles é que haveis de dar vossa palavra: "Eu vos darei uma palavra cheia de sabedoria, à qual não poderão resistir, nem contradizer, nenhum de vossos inimigos."</p>
+
+          <p>É entre estes prediletos que tomareis vossas complacências, na qualidade de Rei das virtudes de Jesus Cristo, o bem-amado, pois que em todas as suas missões não terão outro fim senão dar-Vos toda a glória dos despojos que arrebatarem a vossos inimigos.</p>
+
+          <p>Por seu abandono à Providência e sua devoção a Maria, terão as asas prateadas da pomba, isto é, a pureza da doutrina e dos costumes; e douradas as costas, isto é, uma perfeita caridade para com o próximo para suportar-lhe os defeitos e um grande amor a Jesus Cristo para carregar a sua cruz.</p>
+
+          <p>Quem é, Senhor Deus de verdade, esta montanha misteriosa de que nos dizeis tantas maravilhas, senão Maria, vossa dileta Esposa, cujos fundamentos pusestes sobre o cimo das mais altas montanhas?</p>
+
+          <p>Felizes e mil vezes felizes os sacerdotes que tão bem escolhestes e predestinastes para habitar convosco nessa abundante e divina montanha, para aí se tornarem reis da eternidade, por seu desprezo da terra e sua elevação em Deus; para aí se tornarem mais brancos que a neve por sua união a Maria, vossa Esposa toda formosa, toda pura e toda imaculada.</p>
+
+          <p>É sobre esta montanha de Deus que com Ele hão de ser transfigurados, como no Tabor, que hão de morrer com Ele, como no Calvário, e que hão de subir com Ele ao Céu, como no monte das Oliveiras. <em>Amém.</em></p>
+                </div>
+        <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
+      </section>
+
+
+      <section class="oracao" id="oracao-abrasada-dia6">
+        <div class="oracao-cabecalho">
+          <h2 class="oracao-titulo">Oração Abrasada · Dia 6</h2>
+          <p class="oracao-subtitulo">Que apaguem o fogo na Casa de Deus</p>
+        </div>
+        <p class="oracao-intro">Sexta e última parte da Oração Abrasada, o clímax dramático: enquanto multidões se unem facilmente sob o estandarte do demônio, poucos se alistam sob o estandarte de Deus. Súplica final pelo despertar dos servos do Senhor, e oração para que se erga uma companhia seleta de guardas para velar pela Casa do Senhor.</p>
+        <div class="oracao-corpo">
+
+          <p>Só a Vós compete formar, por vossa graça, esta assembleia; se o homem nela puser primeiro a mão, nada se fará; se nela misturar algo de próprio com o que é vosso, estragará tudo, arruinará tudo. É obra vossa, grande Deus. Fazei vossa obra toda divina; juntai, convocai, reuni de todas as partes de vossos domínios os vossos eleitos, para deles fazer um corpo de exército contra vossos inimigos.</p>
+
+          <p>Vede, Senhor Deus dos exércitos, os capitães que formam companhias completas, os potentados que reúnem exércitos numerosos, os navegadores que armam frotas inteiras, os mercadores que se congregam em grande número nos mercados e nas feiras! Quantos ladrões, ímpios, ébrios e libertinos se unem em massa contra Vós todos os dias, tão fácil e prontamente!</p>
+
+          <p>Basta soltar um assobio, rufar um tambor, mostrar a ponta embotada de uma espada, prometer um ramo seco de louros, oferecer um pedaço de terra amarela ou branca; basta, em poucas palavras, uma fumaça de honra, um interesse de nada e um mesquinho prazer animal que se tem em vista para, num instante, reunir os ladrões, ajuntar os soldados, agrupar os batalhões, congregar os mercadores, encher as casas e os mercados, e cobrir a terra e o mar com uma multidão inumerável de réprobos.</p>
+
+          <p>E Vós, grande Deus, embora haja tanta glória, doçura e proveito em servir-Vos, quase ninguém tomará o vosso partido? Quase nenhum soldado se alistará sob vossos estandartes? Quase nenhum São Miguel clamará no meio de seus irmãos, cheio de zelo pela vossa glória: "Quem como Deus?"</p>
+
+          <p>Ah! permiti-me bradar por toda parte: <strong>Fogo, fogo, fogo! Socorro, socorro, socorro!</strong> Fogo na casa de Deus, fogo nas almas, fogo até no santuário! Socorro, que assassinam nosso irmão; socorro, que degolam nossos filhos; socorro, que apunhalam nosso bom pai!</p>
+
+          <p>"Quem for do Senhor, junte-se a mim!": que venham todos os bons sacerdotes espalhados pelo mundo cristão, quer os que estejam atualmente no combate, quer os que se tenham retirado da confusão da batalha para os desertos e ermos; que venham estes bons sacerdotes e se unam a nós (a união faz a força) a fim de formarmos, sob o estandarte da Cruz, um exército em boa ordem de batalha e bem disciplinado para de concerto atacar os inimigos de Deus.</p>
+
+          <p>"Levante-se Deus, e sejam dispersados os seus inimigos! Acordai, Senhor, por que pareceis dormir? Despertai!"</p>
+
+          <p>Erguei-Vos, Senhor! Por que pareceis dormir? Erguei-Vos em vossa onipotência, em vossa misericórdia e em vossa justiça para formar uma companhia seleta de guardas que velem a vossa casa, defendam a vossa glória e salvem as vossas almas, a fim de que haja um só rebanho e um só pastor, e que todos Vos rendam glória em vosso templo! <em>Amém.</em></p>
+
+          <p class="formula-final">Deus só.</p>
                 </div>
         <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
       </section>
@@ -846,34 +1254,40 @@
       <section class="oracao" id="formula-consagracao">
         <div class="oracao-cabecalho">
           <h2 class="oracao-titulo">Fórmula da Consagração</h2>
-          <p class="oracao-subtitulo">Para o dia da Consagração · São Luís Maria de Montfort</p>
+          <p class="oracao-subtitulo">Para o dia da Consagração · Texto original do Tratado</p>
         </div>
-        <p class="oracao-intro">Fórmula composta por São Luís Maria de Montfort para o dia solene em que o consagrado se entrega inteiramente a Jesus Cristo pelas mãos de Maria. Recomenda-se que seja recitada de joelhos, diante de uma imagem de Maria, idealmente após a Comunhão na Missa daquele dia.</p>
+        <p class="oracao-intro">Fórmula composta por São Luís Maria de Montfort para o dia solene em que o consagrado se entrega inteiramente a Jesus Cristo pelas mãos de Maria. Recomenda-se que seja recitada de joelhos, diante de uma imagem de Maria, idealmente após a Comunhão na Missa daquele dia. O texto abaixo é a tradução fiel da versão original do Tratado.</p>
         <div class="oracao-corpo">
 
-          <p>Eterna e Encarnada Sabedoria, amabilíssimo e adorável Jesus, verdadeiro Deus e verdadeiro homem, Filho único do Pai eterno e de Maria sempre Virgem: eu vos adoro profundamente no seio e nos esplendores de vosso Pai, durante a eternidade, e no seio virginal de Maria, vossa digníssima Mãe, no tempo de vossa Encarnação.</p>
+          <p>Ó Sabedoria eterna e encarnada! Ó amabilíssimo e adorável Jesus, verdadeiro Deus e verdadeiro homem, unigênito Filho do eterno Pai e da sempre Virgem Maria.</p>
 
-          <p>Eu vos dou graças por terdes vos aniquilado tomando a forma de escravo, para me arrancar da cruel escravidão do demônio. Eu vos louvo e glorifico por terdes vos submetido em todas as coisas a Maria, vossa santa Mãe, a fim de me tornardes, por meio dela, vosso fiel escravo.</p>
+          <p>Adoro-Vos profundamente no seio e nos esplendores de vosso Pai, durante a eternidade, e no seio virginal de Maria, vossa digníssima Mãe, no tempo de vossa Encarnação.</p>
 
-          <p>Mas, infelizmente, ingrato e infiel como sou, não vos guardei as promessas que vos fiz solenemente em meu Batismo. Não cumpri minhas obrigações. Não mereço ser chamado vosso filho, nem mesmo vosso escravo. E como nada há em mim que não mereça vossas repulsas e vossa cólera, não ouso, por mim mesmo, aproximar-me de vossa santíssima e augustíssima Majestade. Por isso, recorro à intercessão e à misericórdia de vossa santíssima Mãe, que me destes por mediadora junto de Vós. É por meio dela que espero obter de Vós a contrição e o perdão dos meus pecados, a aquisição e a conservação da Sabedoria.</p>
+          <p>Eu Vos dou graças por Vos terdes aniquilado a Vós mesmo, tomando a forma de escravo, para livrar-me do cruel cativeiro do demônio. Eu Vos louvo e glorifico por Vos terdes querido submeter a Maria, vossa Mãe Santíssima, em todas as coisas, a fim de por Ela tornar-me vosso fiel escravo.</p>
 
-          <p>Eu vos saúdo, pois, ó Maria Imaculada, tabernáculo vivo da Divindade, onde a Sabedoria eterna, escondida, quer ser adorada pelos anjos e pelos homens. Eu vos saúdo, ó Rainha do Céu e da terra, a cujo império tudo está submisso o que se encontra abaixo de Deus.</p>
+          <p>Mas ai de mim, criatura ingrata e infiel! Não guardei os votos e as promessas que Vos fiz solenemente no Batismo. Não cumpri com minhas obrigações; não mereço ser chamado vosso filho nem vosso escravo; e, como nada há em mim que não mereça vossa repulsa e vossa cólera, não ouso aproximar-me por mim mesmo de vossa santa e augusta Majestade.</p>
 
-          <p>Eu vos saúdo, ó refúgio seguro dos pecadores, cuja misericórdia não falta a ninguém. Atendei aos desejos que tenho da divina Sabedoria, e, para isso, recebei os votos e ofertas que minha baixeza vos apresenta.</p>
+          <p>É por esta razão que recorro à intercessão e à misericórdia de vossa Mãe Santíssima, que me destes por medianeira junto a Vós, e é por este meio que espero obter de Vós a contrição e o perdão de meus pecados, a aquisição e a conservação da sabedoria.</p>
 
-          <p class="formula-destaque">Eu, <em>(diga seu nome)</em>, pecador infiel, renovo e ratifico hoje, em vossas mãos, ó Maria, as promessas do meu Batismo. Renuncio para sempre a Satanás, às suas pompas e às suas obras, e dou-me inteiramente a Jesus Cristo, Sabedoria Encarnada, para carregar minha cruz após Ele todos os dias da minha vida.</p>
+          <p>Ave, pois, ó Maria Imaculada, tabernáculo vivo da Divindade, onde a eterna Sabedoria escondida quer ser adorada pelos anjos e pelos homens.</p>
 
-          <p class="formula-destaque">E, para ser-Lhe mais fiel do que tenho sido até agora, eu vos escolho hoje, ó Maria, em presença de toda a corte celeste, por minha Mãe e Senhora. Eu vos entrego e consagro, como vosso escravo, meu corpo e minha alma, meus bens interiores e exteriores, e o próprio valor de minhas boas ações passadas, presentes e futuras, deixando-vos pleno e inteiro direito de dispor de mim e de tudo o que me pertence, sem reserva, segundo o vosso beneplácito, para a maior glória de Deus, no tempo e na eternidade.</p>
+          <p>Ave, ó Rainha do Céu e da terra, a cujo império é submetido tudo o que está abaixo de Deus!</p>
 
-          <p>Recebei, ó Virgem benigna, esta pequena oferta de minha escravidão, em honra e em união da submissão que a Sabedoria eterna se dignou ter à vossa maternidade; em homenagem ao poder que ambos tendes sobre este pequeno verme e este miserável pecador; em ação de graças pelos privilégios com que a Santíssima Trindade vos favoreceu.</p>
+          <p>Ave, ó seguro Refúgio dos pecadores, cuja misericórdia a ninguém falece! Atendei ao desejo que tenho da divina Sabedoria, e recebei para este fim os votos e as oferendas apresentadas pela minha baixeza.</p>
 
-          <p>Protesto que daqui em diante quero, como vosso verdadeiro escravo, procurar a vossa honra e obedecer-vos em todas as coisas.</p>
+          <p class="formula-destaque">Eu, <em>(diga seu nome)</em>, infiel pecador, renovo e ratifico hoje, em vossas mãos, os votos do meu Batismo. Renuncio para sempre a satanás, suas pompas e suas obras, e dou-me inteiramente a Jesus Cristo, a Sabedoria encarnada, para segui-Lo levando minha Cruz em todos os dias de minha vida.</p>
 
-          <p>Ó Mãe admirável, apresentai-me a vosso querido Filho, em qualidade de eterno escravo, a fim de que, tendo-me Ele resgatado por meio de Vós, por meio de Vós me receba.</p>
+          <p class="formula-destaque">E a fim de Lhe ser mais fiel do que até agora tenho sido, escolho-Vos hoje, ó Maria Santíssima, em presença de toda a corte celeste, para minha Mãe e minha Senhora. Entrego-Vos e consagro-Vos, na qualidade de escravo, meu corpo e minha alma, meus bens interiores e exteriores, e até o valor de minhas obras boas passadas, presentes e futuras, deixando-Vos direito pleno e inteiro de dispor de mim e de tudo o que me pertence, sem exceção, a vosso gosto, para a maior glória de Deus, no tempo e na eternidade.</p>
 
-          <p>Ó Mãe de misericórdia, fazei-me a graça de obter-me a verdadeira Sabedoria de Deus, e admiti-me, para esse fim, no número daqueles que amais, ensinais, conduzis, alimentais e protegeis como vossos filhos e escravos.</p>
+          <p>Recebei, ó benigníssima Virgem, esta pequena oferenda de minha escravidão, em união e em honra à submissão que a Sabedoria eterna quis ter à vossa maternidade; em homenagem ao poder que tendes ambos sobre este vermezinho e miserável pecador; e em ação de graças pelos privilégios com que Vos favoreceu a Santíssima Trindade.</p>
 
-          <p>Ó Virgem fiel, fazei-me em tudo um perfeito discípulo, imitador e escravo da Sabedoria Encarnada, Jesus Cristo, vosso Filho, para que chegue, pela vossa intercessão e a vosso exemplo, à plenitude de sua idade sobre a terra e de sua glória no céu. <em>Amém.</em></p>
+          <p>Protesto que quero, dora em diante, como vosso verdadeiro escravo, buscar vossa honra e obedecer-Vos em todas as coisas.</p>
+
+          <p>Ó Mãe admirável, apresentai-me a vosso amado Filho, na qualidade de escravo perpétuo, para que, tendo-me remido por Vós, por Vós também me receba favoravelmente.</p>
+
+          <p>Ó Mãe de misericórdia, concedei-me a graça de obter a verdadeira sabedoria de Deus, e de colocar-me, para este fim, no número daqueles a quem amais, ensinais, guiais, sustentais e protegeis como filhos e escravos vossos.</p>
+
+          <p>Ó Virgem fiel, tornai-me em todas as coisas um tão perfeito discípulo, imitador e escravo da Sabedoria encarnada, Jesus Cristo, vosso Filho, que eu chegue, por vossa intercessão e a vosso exemplo, à plenitude de sua idade na terra e de sua glória nos Céus. <em>Assim seja.</em></p>
                 </div>
         <a href="#topo" class="voltar-indice">↑ voltar ao índice</a>
       </section>
